@@ -9,6 +9,7 @@ import { Insights } from './views/Insights';
 import { TaskDetail } from './views/TaskDetail';
 import { Syllabus } from './views/Syllabus'; 
 import { HomeIcon, TargetIcon, AwardIcon, ChartIcon, ZapIcon, CheckCircleIcon, ClipboardIcon } from './components/Icons';
+import { SpeedInsights } from './components/SpeedInsights';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<AppTab>(AppTab.DASHBOARD);
@@ -328,7 +329,9 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100/50 text-slate-900 font-sans flex justify-center">
+    <>
+      <SpeedInsights />
+      <div className="min-h-screen bg-slate-100/50 text-slate-900 font-sans flex justify-center">
       <style>{`
         @keyframes floatUp {
           0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
@@ -424,6 +427,7 @@ const App: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
